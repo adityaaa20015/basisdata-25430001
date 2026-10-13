@@ -4,7 +4,7 @@
 - **NIM:** 25430001
 - **Kelas:** A
 - **Mata kuliah:** Praktikum Basis Data
-- **Milestone:** [Proyek/Pertemuan]
+- **Milestone:** proyek 2
 - **Tema:** Perpustakaan
 - **Kode tema:** `perpus`
 
@@ -509,10 +509,10 @@ Nexus Pustaka AR memiliki data yang terus bertambah dari kegiatan perpustakaan s
 
 Perkiraan volume data:
 
-- Jumlah anggota = `[isi jumlah]`
-- Jumlah judul buku = `[isi jumlah]`
-- Jumlah eksemplar buku = `[isi jumlah]`
-- Jumlah petugas = `[isi jumlah]`
+- Jumlah anggota = `300`
+- Jumlah judul buku = `1000`
+- Jumlah eksemplar buku = `2000`
+- Jumlah petugas = `3`
 - Perkiraan transaksi per hari = **50 transaksi**
 - Perkiraan transaksi per bulan = `50 × 30 = 1.500 transaksi`
 - Perkiraan transaksi per tahun = `50 × 365 = 18.250 transaksi`
