@@ -193,3 +193,92 @@ Kesimpulan: tidak ada penentu yang bukan kunci kandidat, sehingga seluruh tabel 
 **Pertanyaan:** Kolom pemasok_brg di spreadsheet lama tidak muncul di tabel barang. Di mana informasi "barang ini dipasok oleh siapa" kini disimpan? Apa keuntungannya dibanding menyimpan satu nama pemasok di tabel barang?
 
 **Jawaban:** Informasi tersebut diperoleh dari riwayat pembelian melalui jalur barang → detail_pembelian → pembelian → pemasok. Detail pembelian mencatat barang yang dibeli, sedangkan pembelian mencatat pemasok yang menerbitkan faktur. Keuntungannya: (1) satu barang dapat dipasok oleh lebih dari satu pemasok, sedangkan satu kolom pemasok_brg hanya dapat menampung satu nama; (2) Kopma dapat berganti pemasok tanpa mengubah data barang, dan riwayat pembelian lama tetap menunjukkan pemasok yang benar; (3) nama pemasok hanya ditulis sekali di tabel pemasok, sehingga masalah ejaan nama pemasok yang berubah-ubah pada spreadsheet lama tidak terulang.
+
+## Latihan E.1: Pemasok dengan banyak nomor telepon
+
+**Kebutuhan:** Kopma ingin mencatat beberapa nomor telepon untuk setiap pemasok.
+
+**Masalah jika disimpan di tabel pemasok:**
+
+- Beberapa nomor dalam satu sel (`"0812…, 0857…"`) melanggar 1NF karena nilainya tidak atomik.
+- Kolom berderet (`telepon1, telepon2, telepon3`) adalah grup berulang: jumlah kolom membatasi jumlah nomor, dan kolom yang tidak terpakai menjadi kosong.
+
+**Dependensi fungsional:**
+
+```text
+id_pemasok -> kode_pemasok, nama_pemasok, alamat_pemasok
+(id_pemasok, no_telepon_pemasok) -> (tidak ada atribut lain; pasangan ini sendiri adalah kuncinya)
+```
+
+Satu pemasok dapat memiliki banyak nomor, sehingga id_pemasok tidak menentukan satu nomor telepon. Nomor telepon adalah atribut bernilai banyak dan harus dipisahkan.
+
+**Relasi baru:**
+
+```text
+PEMASOK (id_pemasok, kode_pemasok, nama_pemasok, alamat_pemasok)
+TELEPON_PEMASOK (id_pemasok*, no_telepon_pemasok)
+-- PEMASOK: kunci primer id_pemasok
+-- TELEPON_PEMASOK: kunci primer komposit (id_pemasok, no_telepon_pemasok); * = kunci tamu ke PEMASOK
+```
+
+Contoh data:
+
+| id_pemasok | no_telepon_pemasok |
+|---|---|
+| 1 | 081234567001 |
+| 1 | 085712345002 |
+| 2 | 081398765003 |
+
+Hasilnya: kolom telepon_pemasok dihapus dari tabel pemasok. Setiap nomor menjadi satu baris di TELEPON_PEMASOK, sehingga jumlah nomor per pemasok tidak dibatasi dan tidak ada kolom kosong. Kunci komposit mencegah nomor yang sama tercatat dua kali untuk pemasok yang sama. Kedua relasi memenuhi 3NF dan BCNF karena satu-satunya penentu pada masing-masing relasi adalah kunci primernya.
+
+## Latihan E.2: Pelanggaran 3NF jika nama_anggota disimpan di penjualan
+
+**Rancangan yang melanggar 3NF:**
+
+```text
+PENJUALAN_SALAH (id_penjualan, no_nota_penjualan, tgl_penjualan, id_petugas*, id_anggota*, nama_anggota, bayar_penjualan)
+```
+
+Terdapat ketergantungan transitif id_penjualan → id_anggota → nama_anggota. Atribut nama_anggota ditentukan oleh id_anggota (atribut bukan kunci), sehingga relasi ini tidak memenuhi 3NF.
+
+**Contoh data (anggota id 7 berbelanja tiga kali):**
+
+| id_penjualan | no_nota_penjualan | tgl_penjualan | id_anggota | nama_anggota |
+|---|---|---|---|---|
+| 101 | PJ-2609-0142 | 2026-09-14 | 7 | Sari |
+| 108 | PJ-2609-0150 | 2026-09-15 | 7 | Sari |
+| 115 | PJ-2609-0163 | 2026-09-20 | 7 | Sari |
+
+Nama "Sari" tertulis tiga kali untuk satu anggota yang sama.
+
+**Kueri ubah yang memperlihatkan anomali ubah:**
+
+Anggota mengganti namanya menjadi "Sari Dewi", tetapi petugas hanya mengubah nota yang sedang dibuka:
+
+```sql
+UPDATE penjualan
+SET nama_anggota = 'Sari Dewi'
+WHERE no_nota_penjualan = 'PJ-2609-0142';
+```
+
+**Hasil setelah kueri dijalankan:**
+
+| id_penjualan | no_nota_penjualan | id_anggota | nama_anggota |
+|---|---|---|---|
+| 101 | PJ-2609-0142 | 7 | Sari Dewi |
+| 108 | PJ-2609-0150 | 7 | Sari |
+| 115 | PJ-2609-0163 | 7 | Sari |
+
+Anggota yang sama (id_anggota 7) kini memiliki dua nama berbeda. Laporan belanja per anggota dapat menampilkan "Sari" dan "Sari Dewi" sebagai dua orang. Inilah anomali ubah.
+
+**Perbaikan sesuai 3NF:** nama_anggota hanya disimpan di tabel anggota, sehingga perubahan nama cukup dilakukan pada satu baris:
+
+```sql
+UPDATE anggota
+SET nama_anggota = 'Sari Dewi'
+WHERE id_anggota = 7;
+```
+
+Semua penjualan otomatis menampilkan nama terbaru karena hanya merujuk id_anggota.
+
+Catatan: tabel belum dibuat di MariaDB (baru pada Pertemuan 5), sehingga kueri di atas ditulis sebagai ilustrasi dan belum dijalankan.
