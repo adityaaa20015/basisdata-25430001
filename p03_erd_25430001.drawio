@@ -272,7 +272,7 @@
       </mxGeometry>
     </mxCell>
     <mxCell id="c65" parent="1" style="shape=table;startSize=32;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" value="peminjaman" vertex="1">
-      <mxGeometry height="188" width="300" x="-604" y="420" as="geometry" />
+      <mxGeometry height="214" width="300" x="-604" y="420" as="geometry" />
     </mxCell>
     <mxCell id="c66" parent="c65" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;html=1;strokeColor=#d6b656;" value="" vertex="1">
       <mxGeometry height="26" width="300" y="32" as="geometry" />
@@ -339,8 +339,21 @@
         <mxRectangle height="26" width="240" as="alternateBounds" />
       </mxGeometry>
     </mxCell>
-    <mxCell id="c81" parent="c65" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;strokeColor=#d6b656;" value="" vertex="1">
+    <mxCell id="p4r1" parent="c65" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;strokeColor=#d6b656;" value="" vertex="1">
       <mxGeometry height="26" width="300" y="162" as="geometry" />
+    </mxCell>
+    <mxCell id="p4c1" parent="p4r1" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;" value="" vertex="1">
+      <mxGeometry height="26" width="60" as="geometry">
+        <mxRectangle height="26" width="60" as="alternateBounds" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="p4c2" parent="p4r1" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;overflow=hidden;html=1;" value="tanggal_jatuh_tempo_peminjaman" vertex="1">
+      <mxGeometry height="26" width="240" x="60" as="geometry">
+        <mxRectangle height="26" width="240" as="alternateBounds" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c81" parent="c65" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="26" width="300" y="188" as="geometry" />
     </mxCell>
     <mxCell id="c82" parent="c81" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;" value="" vertex="1">
       <mxGeometry height="26" width="60" as="geometry">
@@ -460,7 +473,7 @@
       </mxGeometry>
     </mxCell>
     <mxCell id="c109" parent="1" style="shape=table;startSize=32;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;" value="detail_peminjaman" vertex="1">
-      <mxGeometry height="162" width="360" x="-184" y="420" as="geometry" />
+      <mxGeometry height="136" width="360" x="-184" y="420" as="geometry" />
     </mxCell>
     <mxCell id="c110" parent="c109" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;html=1;strokeColor=#d79b00;" value="" vertex="1">
       <mxGeometry height="26" width="360" y="32" as="geometry" />
@@ -501,21 +514,8 @@
         <mxRectangle height="26" width="300" as="alternateBounds" />
       </mxGeometry>
     </mxCell>
-    <mxCell id="c119" parent="c109" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;strokeColor=#d79b00;" value="" vertex="1">
-      <mxGeometry height="26" width="360" y="110" as="geometry" />
-    </mxCell>
-    <mxCell id="c120" parent="c119" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;" value="" vertex="1">
-      <mxGeometry height="26" width="60" as="geometry">
-        <mxRectangle height="26" width="60" as="alternateBounds" />
-      </mxGeometry>
-    </mxCell>
-    <mxCell id="c121" parent="c119" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;overflow=hidden;html=1;" value="tanggal_jatuh_tempo_detail_peminjaman" vertex="1">
-      <mxGeometry height="26" width="300" x="60" as="geometry">
-        <mxRectangle height="26" width="300" as="alternateBounds" />
-      </mxGeometry>
-    </mxCell>
     <mxCell id="c122" parent="c109" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;html=1;strokeColor=#d79b00;" value="" vertex="1">
-      <mxGeometry height="26" width="360" y="136" as="geometry" />
+      <mxGeometry height="26" width="360" y="110" as="geometry" />
     </mxCell>
     <mxCell id="c123" parent="c122" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;html=1;" value="" vertex="1">
       <mxGeometry height="26" width="60" as="geometry">
@@ -1040,7 +1040,7 @@
         <mxRectangle height="30" width="900" as="alternateBounds" />
       </mxGeometry>
     </mxCell>
-    <mxCell id="ki21" parent="ki17" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;align=left;spacingLeft=6;fontSize=12;fontStyle=0;" value="tanggal_jatuh_tempo_detail_peminjaman, tanggal_kembali_detail_peminjaman" vertex="1">
+    <mxCell id="ki21" parent="ki17" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;align=left;spacingLeft=6;fontSize=12;fontStyle=0;" value="tanggal_jatuh_tempo_peminjaman, tanggal_kembali_detail_peminjaman" vertex="1">
       <mxGeometry height="30" width="580" x="1460" as="geometry">
         <mxRectangle height="30" width="580" as="alternateBounds" />
       </mxGeometry>
@@ -1324,5 +1324,5 @@
     <mxCell id="ki82" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;whiteSpace=wrap;" value="Semua 15 KI dapat ditelusuri melalui entitas dan relasi pada ERD. (T) = atribut turunan. Jalur dibaca mengikuti garis relasi: setiap tanda &amp;rarr; berarti berpindah ke entitas lain melalui pasangan PK&amp;ndash;FK." vertex="1">
       <mxGeometry height="40" width="2040" x="-1024" y="1834" as="geometry" />
     </mxCell>
-  </root>
+  <mxCell id="p4note" value="&lt;b&gt;Perubahan Pertemuan 4 (normalisasi)&lt;/b&gt;&lt;br&gt;1. tanggal_jatuh_tempo dipindah dari detail_peminjaman ke peminjaman menjadi tanggal_jatuh_tempo_peminjaman, karena AB-10: setiap peminjaman memiliki satu tanggal jatuh tempo (FD1).&lt;br&gt;2. AB-03 direvisi: nim_anggota unik untuk setiap anggota (tetap AK).&lt;br&gt;Rincian: p04_normalisasi_25430001.md" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#e8f4ff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="256" y="690" width="720" height="120" as="geometry" /></mxCell></root>
 </mxGraphModel>
