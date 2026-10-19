@@ -254,7 +254,7 @@ Data **Usulan Buku** dibuat sebagai entitas tersendiri karena data tersebut bera
 |---|---|---|
 | AB-01 | Mahasiswa harus terdaftar sebagai anggota sebelum melakukan peminjaman buku. | Proses layanan |
 | AB-02 | Setiap anggota memiliki satu nomor anggota yang unik. | Identifikasi anggota |
-| AB-03 | NIM mahasiswa tidak boleh sama pada dua anggota aktif. | Identifikasi mahasiswa |
+| AB-03 | NIM mahasiswa unik untuk setiap anggota. Mahasiswa yang berhenti lalu kembali aktif cukup diubah status keanggotaannya, bukan didaftarkan ulang. | Identifikasi mahasiswa |
 | AB-04 | Hanya anggota dengan status `aktif` yang dapat melakukan peminjaman. | Status anggota |
 | AB-05 | Maksimal buku yang dapat dipinjam dalam satu transaksi adalah 4 buku. | Parameter P |
 | AB-06 | Buku hanya dapat dipinjam jika eksemplar memiliki status `tersedia`. | Status eksemplar |
